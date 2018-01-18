@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-boot-jpa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: edian_test
+    password: edian_test
+    url: jdbc:mysql://edianlicai4test.mysql.rds.aliyuncs.com:3306/edian_test?serverTimezone=Asia/Singapore&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+  jpa:
+    show-sql: true
+logging:
+  level: debug
