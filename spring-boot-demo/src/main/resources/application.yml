@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-boot-demo
+message: spring-boot
+r:
+  intv: ${random.int}
+  value: ${random.value}
+  uuid: ${random.uuid}
+  bignumber: ${random.long}
+  intvalue: ${random.int(10)}
+  range: ${random.int[1,100]}
+logging:
+  level: debug

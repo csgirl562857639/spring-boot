@@ -8,8 +8,19 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>spring-boot-demo</module>
+	</modules>
+
 	<name>spring-boot</name>
 	<description>Demo project for Spring Boot</description>
+
+	<developers>
+		<developer>
+			<name>heihaier</name>
+			<email>csgirl562857639@gmail.com</email>
+		</developer>
+	</developers>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,6 +33,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+
+		<fastjson.version>1.2.44</fastjson.version>
 	</properties>
 
 	<dependencies>
@@ -44,6 +57,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
 		</dependency>
 	</dependencies>
 
