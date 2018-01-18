@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-boot-mybatis
+  datasource:
+    url: jdbc:mysql://edianlicai4test.mysql.rds.aliyuncs.com:3306/edian_test?serverTimezone=Asia/Singapore&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    password: edian_test
+    username: edian_test
+    driver-class-name: com.mysql.jdbc.Driver
+logging:
+  level: debug
+mybatis:
+#  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.heihaier.springbootmybatis.domain
+  mapper-locations: classpath:mybatis/**/*.xml

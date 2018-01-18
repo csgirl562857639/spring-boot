@@ -1,0 +1,37 @@
+package com.heihaier.springbootmybatis;
+
+import com.alibaba.fastjson.JSON;
+import com.heihaier.springbootmybatis.domain.User;
+import com.heihaier.springbootmybatis.mapper.UserMapper;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringBootMybatisApplicationTests {
+
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	private UserMapper userMapper;
+
+	@Test
+	public void test() {
+		User user = userMapper.getByMobile("18511896775");
+		assert user != null;
+		logger.info("user: {}", JSON.toJSONString(user, true));
+	}
+
+	@Test
+	public void get() {
+		User user = userMapper.get(148115);
+		assert user != null;
+		logger.info("user: {}", JSON.toJSONString(user, true));
+	}
+
+}
