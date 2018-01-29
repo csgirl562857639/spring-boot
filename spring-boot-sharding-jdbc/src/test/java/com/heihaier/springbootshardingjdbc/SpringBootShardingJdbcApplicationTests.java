@@ -46,5 +46,4 @@ public class SpringBootShardingJdbcApplicationTests {
                     userMapper.save(user);
                 });
     }
-
 }
