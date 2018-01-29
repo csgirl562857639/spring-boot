@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-boot-druid
+  datasource:
+    druid:
+      url: jdbc:mysql://edianlicai4test.mysql.rds.aliyuncs.com:3306/edian_yzd?serverTimezone=Asia/Singapore&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+      username: edian_test
+      password: 1jevJI19H6AX4x/ijAfnbw/ErEqzhaOY8BRMH7fASFAFxQg1nljokFhes08PqzYSwmcgqOoInFE0GWxGtvOTaA==
+      driver-class-name: com.mysql.jdbc.Driver
+      connection-properties: config.decrypt=true;config.decrypt.key=${public-key}
+      filters: config,stat,wall
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 28
+public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOWRzXRKwhj0LdZWAWLyp4JTZqEvvEiz6CNs3c6N7+6SIASzzH0fDUsVcWMFl7X3oGPPLYCcvKqRAvQ/uO0Y3XUCAwEAAQ==
+logging:
+  level: debug
+mybatis:
+#  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.heihaier.springbootdruid.domain
+  mapper-locations: classpath:mybatis/**/*.xml
