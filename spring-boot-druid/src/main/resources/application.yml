@@ -10,7 +10,7 @@ spring:
       password: 1jevJI19H6AX4x/ijAfnbw/ErEqzhaOY8BRMH7fASFAFxQg1nljokFhes08PqzYSwmcgqOoInFE0GWxGtvOTaA==
       driver-class-name: com.mysql.jdbc.Driver
       connection-properties: config.decrypt=true;config.decrypt.key=${public-key}
-      filters: config,stat,wall
+      filters: config,stat,wall,slf4j
       initial-size: 1
       min-idle: 1
       max-active: 20
