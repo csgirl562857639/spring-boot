@@ -27,7 +27,7 @@ public class SpringBootShardingJdbcApplicationTests {
 
 	@Test
 	public void get() {
-		User user = userMapper.get(100060);
+		User user = userMapper.get(100109);
 		assert user != null;
 		log.info("user: {}", JSON.toJSONString(user, true));
 	}

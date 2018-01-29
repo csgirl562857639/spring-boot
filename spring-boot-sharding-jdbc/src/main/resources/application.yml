@@ -69,6 +69,6 @@ sharding:
 logging:
   level: debug
 mybatis:
-#  config-location: classpath:mybatis-config.xml
   type-aliases-package: com.heihaier.springbootshardingjdbc.domain
-  mapper-locations: classpath:mybatis/**/*.xml
+  mapper-locations: classpath:mybatis/*.xml
+#  config-location: classpath:mybatis-config.xml
