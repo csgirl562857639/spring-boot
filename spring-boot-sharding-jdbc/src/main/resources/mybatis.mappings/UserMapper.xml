@@ -14,16 +14,28 @@
     <select id="get" resultType="User">
         SELECT
         <include refid="tUserColumns"/>
-        FROM t_user a
+        FROM m_user a
         <include refid="tUserJoins"/>
         WHERE a.id = #{id}
     </select>
 
 
     <update id="delete">
-        UPDATE t_user SET
+        UPDATE m_user SET
         del_flag = #{DEL_FLAG_DELETE}
         WHERE id = #{id}
     </update>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO m_user(
+        id,
+        mobile,
+        state
+        ) VALUES (
+        #{id},
+        #{mobile},
+        #{state}
+        )
+    </insert>
 
 </mapper>

@@ -12,8 +12,10 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserMapper {
 
-    @Select("select * from t_user t where t.del_flag = 0 and t.mobile = #{mobile}")
+    @Select("select * from m_user t where t.del_flag = 0 and t.mobile = #{mobile}")
     User getByMobile(String mobile);
 
     User get(long id);
+
+    User save(User user);
 }
