@@ -37,6 +37,7 @@ public class SpringBootShardingJdbcApplicationTests {
     @Test
     public void save() {
         LongStream.range(1, 100)
+                .parallel()
                 .forEach(i -> {
                     User user = new User();
                     user.setId(i);
