@@ -1,29 +1,29 @@
-server:
-  port: 8080
-spring:
-  application:
-    name: spring-boot-sharding-jdbc
-sharding:
-  jdbc:
-    datasource:
-      names: ds
-      ds:
-        type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://edianlicai4test.mysql.rds.aliyuncs.com:3306/edian_yzd?serverTimezone=Asia/Singapore&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
-        username: edian_test
-        password: edian_test
-        driver-class-name: com.mysql.jdbc.Driver
-      sharding:
-        tables:
-          m_order:
-            actual-data-nodes: ds.m_order_${0..2}
-            table-strategy:
-              inline:
-                sharding-column: id
-                algorithm-expression: ds_order_${id % 3}
-logging:
-  level: debug
-mybatis:
-  type-aliases-package: com.heihaier.springbootshardingjdbc.domain
-  mapper-locations: classpath:mybatis/*.xml
+#server:
+#  port: 8080
+#spring:
+#  application:
+#    name: spring-boot-sharding-jdbc
+#sharding:
+#  jdbc:
+#    datasource:
+#      names: ds
+#      ds:
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        url: jdbc:mysql://edianlicai4test.mysql.rds.aliyuncs.com:3306/edian_yzd?serverTimezone=Asia/Singapore&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+#        username: edian_test
+#        password: edian_test
+#        driver-class-name: com.mysql.jdbc.Driver
+#      sharding:
+#        tables:
+#          m_order:
+#            actual-data-nodes: ds.m_order_${0..2}
+#            table-strategy:
+#              inline:
+#                sharding-column: id
+#                algorithm-expression: ds_order_${id % 3}
+#logging:
+#  level: debug
+#mybatis:
+#  type-aliases-package: com.heihaier.springbootshardingjdbc.domain
+#  mapper-locations: classpath:mybatis/*.xml
 #  config-location: classpath:mybatis-config.xml

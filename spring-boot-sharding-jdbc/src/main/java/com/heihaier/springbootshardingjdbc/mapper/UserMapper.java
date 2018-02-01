@@ -17,5 +17,8 @@ public interface UserMapper {
 
     User get(long id);
 
-    User save(User user);
+    void save(User user);
+
+    @Select("select count(0) from m_user m")
+    long count();
 }

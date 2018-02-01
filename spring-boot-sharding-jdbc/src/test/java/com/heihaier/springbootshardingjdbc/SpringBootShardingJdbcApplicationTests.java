@@ -36,8 +36,7 @@ public class SpringBootShardingJdbcApplicationTests {
 
     @Test
     public void save() {
-        LongStream.range(1, 30)
-                .parallel()
+        LongStream.range(1, 100)
                 .forEach(i -> {
                     User user = new User();
                     user.setId(i);
@@ -45,5 +44,12 @@ public class SpringBootShardingJdbcApplicationTests {
                     user.setState("0");
                     userMapper.save(user);
                 });
+    }
+
+    @Test
+    public void count() {
+        long count = userMapper.count();
+        assert count > 0;
+        log.info("count: {}", count);
     }
 }
