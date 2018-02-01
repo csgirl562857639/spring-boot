@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heihaier.springbootshardingjdbc.mapper.AccountMapper">
+
+    <sql id="tUserColumns">
+        a.id AS "id",
+        a.user_id AS "userId",
+        a.state AS "state"
+    </sql>
+
+    <sql id="tUserJoins">
+    </sql>
+
+    <select id="get" resultType="Account">
+        SELECT
+        <include refid="tUserColumns"/>
+        FROM m_account a
+        <include refid="tUserJoins"/>
+        WHERE a.id = #{id}
+    </select>
+
+
+    <update id="delete">
+        UPDATE m_account SET
+        del_flag = #{DEL_FLAG_DELETE}
+        WHERE id = #{id}
+    </update>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO m_account(
+        user_id,
+        state
+        ) VALUES (
+        #{userId},
+        #{state}
+        )
+    </insert>
+
+</mapper>

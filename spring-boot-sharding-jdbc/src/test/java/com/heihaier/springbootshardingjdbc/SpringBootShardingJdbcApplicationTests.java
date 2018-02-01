@@ -1,7 +1,9 @@
 package com.heihaier.springbootshardingjdbc;
 
 import com.alibaba.fastjson.JSON;
+import com.heihaier.springbootshardingjdbc.domain.Account;
 import com.heihaier.springbootshardingjdbc.domain.User;
+import com.heihaier.springbootshardingjdbc.mapper.AccountMapper;
 import com.heihaier.springbootshardingjdbc.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -11,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.LongStream;
 
 @Slf4j
@@ -20,6 +23,9 @@ public class SpringBootShardingJdbcApplicationTests {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private AccountMapper accountMapper;
 
     @Test
     public void test() {
@@ -38,14 +44,17 @@ public class SpringBootShardingJdbcApplicationTests {
     @Test
     public void save() {
         LongStream.range(1, 100)
-                .parallel()
+//                .parallel()
                 .forEach(i -> {
                     User user = new User();
-//                    user.setId(i);
                     user.setMobile("18511896775");
                     user.setState("0");
                     userMapper.save(user);
                     log.info("id: {}", user.getId());
+                    Account account = new Account();
+                    account.setUserId(user.getId());
+                    account.setState("0");
+                    accountMapper.save(account);
                 });
     }
 
@@ -59,6 +68,25 @@ public class SpringBootShardingJdbcApplicationTests {
     @Test
     public void page() {
         List<User> list = userMapper.page(30L, 10L);
+        assert list.size() > 0;
+        log.info("list: {}", JSON.toJSONString(list, Boolean.TRUE));
+    }
+
+    @Test
+    public void getAccount() {
+//        Account account = accountMapper.get(0l);
+//        log.info("account: {}", JSON.toJSONString(account, Boolean.TRUE));
+
+        Account entity = new Account();
+        entity.setUserId(0L);
+        entity.setState("0");
+        accountMapper.save(entity);
+        log.info("id: {}", entity.getId());
+    }
+
+    @Test
+    public void query() {
+        List<Map<String, Object>> list = accountMapper.query();
         assert list.size() > 0;
         log.info("list: {}", JSON.toJSONString(list, Boolean.TRUE));
     }

@@ -23,6 +23,14 @@ sharding:
               inline:
                 sharding-column: id
                 algorithm-expression: m_user_${id % 3}
+          m_account:
+            actual-data-nodes: ds.m_account_${0..2}
+            key-generator-column-name: id
+            table-strategy:
+              inline:
+                sharding-column: user_id
+                algorithm-expression: m_account_${user_id % 3}
 mybatis:
   type-aliases-package: com.heihaier.springbootshardingjdbc.domain
   mapper-locations: classpath:mybatis/*.xml
+#  config-location: classpath:mybatis-config.xml
