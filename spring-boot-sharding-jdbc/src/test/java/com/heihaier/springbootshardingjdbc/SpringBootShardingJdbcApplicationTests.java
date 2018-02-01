@@ -27,6 +27,9 @@ public class SpringBootShardingJdbcApplicationTests {
     @Autowired
     private AccountMapper accountMapper;
 
+    @Autowired
+    private UserService userService;
+
     @Test
     public void test() {
         User user = userMapper.getByMobile("18519330157");
@@ -43,19 +46,7 @@ public class SpringBootShardingJdbcApplicationTests {
 
     @Test
     public void save() {
-        LongStream.range(1, 100)
-//                .parallel()
-                .forEach(i -> {
-                    User user = new User();
-                    user.setMobile("18511896775");
-                    user.setState("0");
-                    userMapper.save(user);
-                    log.info("id: {}", user.getId());
-                    Account account = new Account();
-                    account.setUserId(user.getId());
-                    account.setState("0");
-                    accountMapper.save(account);
-                });
+        userService.save();
     }
 
     @Test
