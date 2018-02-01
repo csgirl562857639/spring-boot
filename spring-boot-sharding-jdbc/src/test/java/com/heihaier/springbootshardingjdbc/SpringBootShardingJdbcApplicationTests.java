@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
 import java.util.stream.LongStream;
 
 @Slf4j
@@ -40,10 +41,11 @@ public class SpringBootShardingJdbcApplicationTests {
                 .parallel()
                 .forEach(i -> {
                     User user = new User();
-                    user.setId(i);
+//                    user.setId(i);
                     user.setMobile("18511896775");
                     user.setState("0");
                     userMapper.save(user);
+                    log.info("id: {}", user.getId());
                 });
     }
 
@@ -52,5 +54,12 @@ public class SpringBootShardingJdbcApplicationTests {
         long count = userMapper.count();
         assert count > 0;
         log.info("count: {}", count);
+    }
+
+    @Test
+    public void page() {
+        List<User> list = userMapper.page(30L, 10L);
+        assert list.size() > 0;
+        log.info("list: {}", JSON.toJSONString(list, Boolean.TRUE));
     }
 }

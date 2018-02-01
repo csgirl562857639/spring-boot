@@ -26,13 +26,11 @@
         WHERE id = #{id}
     </update>
 
-    <insert id="save">
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO m_user(
-        id,
         mobile,
         state
         ) VALUES (
-        #{id},
         #{mobile},
         #{state}
         )

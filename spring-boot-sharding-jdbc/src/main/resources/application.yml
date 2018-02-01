@@ -18,6 +18,7 @@ sharding:
         tables:
           m_user:
             actual-data-nodes: ds.m_user_${0..2}
+            key-generator-column-name: id
             table-strategy:
               inline:
                 sharding-column: id
