@@ -5,6 +5,7 @@ import com.heihaier.springbootshardingjdbc.domain.Account;
 import com.heihaier.springbootshardingjdbc.domain.User;
 import com.heihaier.springbootshardingjdbc.mapper.AccountMapper;
 import com.heihaier.springbootshardingjdbc.mapper.UserMapper;
+import com.heihaier.springbootshardingjdbc.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +15,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.LongStream;
 
 @Slf4j
 @RunWith(SpringRunner.class)

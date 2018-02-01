@@ -1,4 +1,4 @@
-package com.heihaier.springbootshardingjdbc;
+package com.heihaier.springbootshardingjdbc.service;
 
 import com.heihaier.springbootshardingjdbc.domain.Account;
 import com.heihaier.springbootshardingjdbc.domain.User;
