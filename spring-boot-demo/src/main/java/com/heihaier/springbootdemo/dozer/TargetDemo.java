@@ -1,6 +1,9 @@
 package com.heihaier.springbootdemo.dozer;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * @author heihaier@xfuweng.com
@@ -11,5 +14,6 @@ import lombok.Data;
 public class TargetDemo {
     private String value;
     private int age;
-    private String date;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date date;
 }

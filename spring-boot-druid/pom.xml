@@ -3,7 +3,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>${parent.groupId}</groupId>
 	<artifactId>spring-boot-druid</artifactId>
 	<version>${parent.version}</version>
 	<packaging>jar</packaging>
@@ -16,11 +15,6 @@
 		<artifactId>spring-boot</artifactId>
 		<version>1.0.0</version>
 	</parent>
-
-	<properties>
-		<druid.version>1.1.6</druid.version>
-		<mybatis.version>2.0.0-SNAPSHOT</mybatis.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -43,8 +37,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-druid</finalName>
+		<finalName>${name}</finalName>
 	</build>
-
-
 </project>

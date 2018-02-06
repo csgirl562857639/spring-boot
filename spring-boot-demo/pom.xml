@@ -3,7 +3,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>${parent.groupId}</groupId>
 	<artifactId>spring-boot-demo</artifactId>
 	<version>${parent.version}</version>
 	<packaging>jar</packaging>
@@ -26,13 +25,11 @@
 		<dependency>
 			<groupId>net.sf.dozer</groupId>
 			<artifactId>dozer</artifactId>
-			<version>5.5.1</version>
+			<version>${dozer.version}</version>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-demo</finalName>
+		<finalName>${name}</finalName>
 	</build>
-
-
 </project>

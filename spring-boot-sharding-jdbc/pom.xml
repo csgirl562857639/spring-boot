@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>${parent.groupId}</groupId>
     <artifactId>spring-boot-sharding-jdbc</artifactId>
     <version>${parent.version}</version>
     <packaging>jar</packaging>
@@ -16,12 +15,6 @@
         <artifactId>spring-boot</artifactId>
         <version>1.0.0</version>
     </parent>
-
-    <properties>
-        <druid.version>1.1.6</druid.version>
-        <mybatis.version>2.0.0-SNAPSHOT</mybatis.version>
-        <sharding-jdbc.version>2.0.2</sharding-jdbc.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -45,7 +38,7 @@
         <dependency>
             <groupId>io.shardingjdbc</groupId>
             <artifactId>sharding-jdbc-core-spring-boot-starter</artifactId>
-            <version>2.0.2</version>
+            <version>${sharding-jdbc.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>

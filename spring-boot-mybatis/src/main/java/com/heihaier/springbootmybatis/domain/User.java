@@ -3,6 +3,7 @@ package com.heihaier.springbootmybatis.domain;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @author heihaier@xfuweng.com
@@ -14,4 +15,5 @@ public class User implements Serializable {
     private Long id;
     private String mobile;
     private String state;
+    private LocalDateTime createDate;
 }

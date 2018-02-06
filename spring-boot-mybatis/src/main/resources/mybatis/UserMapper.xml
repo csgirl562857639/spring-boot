@@ -5,7 +5,8 @@
     <sql id="tUserColumns">
         a.id AS "id",
         a.mobile AS "mobile",
-        a.state AS "state"
+        a.state AS "state",
+        a.create_date AS "createDate"
     </sql>
 
     <sql id="tUserJoins">

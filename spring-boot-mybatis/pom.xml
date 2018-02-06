@@ -16,10 +16,6 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<properties>
-		<mybatis.version>2.0.0-SNAPSHOT</mybatis.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -35,7 +31,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-mybatis</finalName>
+		<finalName>${name}</finalName>
 	</build>
 
 
