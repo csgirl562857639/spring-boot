@@ -81,4 +81,13 @@ public class SpringBootShardingJdbcApplicationTests {
         assert list.size() > 0;
         log.info("list: {}", JSON.toJSONString(list, Boolean.TRUE));
     }
+
+    @Test
+    public void ss() {
+        User user = new User();
+        user.setMobile("18511896775");
+        user.setState("0");
+        userMapper.insert(user);
+        log.info("user: {}", JSON.toJSONString(user, Boolean.TRUE));
+    }
 }

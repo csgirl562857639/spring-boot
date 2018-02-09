@@ -1,8 +1,5 @@
 package com.heihaier.springbootdemo.web;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @author heihaier@xfuweng.com
  * Date: 18/01/2018
@@ -10,5 +7,4 @@ import org.slf4j.LoggerFactory;
  */
 public class BaseController {
 
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 }

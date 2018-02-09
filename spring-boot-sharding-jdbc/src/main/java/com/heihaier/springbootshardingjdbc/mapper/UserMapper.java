@@ -1,10 +1,7 @@
 package com.heihaier.springbootshardingjdbc.mapper;
 
 import com.heihaier.springbootshardingjdbc.domain.User;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.ResultType;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -29,4 +26,8 @@ public interface UserMapper {
     @ResultType(User.class)
     @Select("select * from m_user t order by t.id limit #{page}, #{pageSize}")
     List<User> page(@Param("page") long page, @Param("pageSize") long pageSize);
+
+    @Options(useGeneratedKeys = true)
+    @Insert("INSERT INTO m_user(mobile, state) VALUES ( #{mobile}, #{state})")
+    Long insert(User user);
 }

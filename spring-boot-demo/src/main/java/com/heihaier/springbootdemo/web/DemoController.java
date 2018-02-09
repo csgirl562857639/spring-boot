@@ -2,6 +2,7 @@ package com.heihaier.springbootdemo.web;
 
 import com.alibaba.fastjson.JSON;
 import com.heihaier.springbootdemo.domain.RandomProp;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Date: 18/01/2018
  * Time: 10:38
  */
+@Slf4j
 @RestController
 public class DemoController extends BaseController {
 
@@ -23,13 +25,13 @@ public class DemoController extends BaseController {
 
     @GetMapping
     public String hello() {
-        logger.info("message: {}", message);
+        log.info("message: {}", message);
         return "hello " + message;
     }
 
     @GetMapping(value = "/random")
     public RandomProp random() {
-        logger.info("prop: {}", JSON.toJSONString(prop, true));
+        log.info("prop: {}", JSON.toJSONString(prop, true));
         return prop;
     }
 }

@@ -1,6 +1,7 @@
 package com.heihaier.springbootdemo.config;
 
 import com.heihaier.springbootdemo.runner.HeihaierRunner;
+import com.heihaier.springbootdemo.runner.KotlinRunner;
 import com.heihaier.springbootdemo.runner.SpringBootRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,5 +22,10 @@ public class RunnerConfig extends BaseConfig {
     @Bean
     public SpringBootRunner springBootRunner() {
         return new SpringBootRunner();
+    }
+
+    @Bean
+    public KotlinRunner kotlinRunner() {
+        return new KotlinRunner();
     }
 }
