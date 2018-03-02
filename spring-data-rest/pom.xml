@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-boot-jpa</artifactId>
-	<version>${parent.version}</version>
+	<artifactId>spring-data-rest</artifactId>
+	<version>${project.parent.version}</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-jpa</name>
+	<name>spring-data-rest</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -25,7 +25,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
