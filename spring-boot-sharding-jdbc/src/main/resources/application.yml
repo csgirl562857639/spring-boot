@@ -30,6 +30,8 @@ sharding:
               inline:
                 sharding-column: user_id
                 algorithm-expression: m_account_${user_id % 3}
+        props:
+          sql.show: true
 mybatis:
   type-aliases-package: com.heihaier.springbootshardingjdbc.domain
   mapper-locations: classpath:mybatis/*.xml

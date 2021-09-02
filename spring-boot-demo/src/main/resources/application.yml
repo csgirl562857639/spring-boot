@@ -11,5 +11,3 @@ r:
   bignumber: ${random.long}
   intvalue: ${random.int(10)}
   range: ${random.int[1,100]}
-logging:
-  level: debug
